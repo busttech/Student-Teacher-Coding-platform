@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='editor.css')}}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h2 class="logo">Students Dashboard</h2>
+            <nav>
+                <ul>
+                    <li><a href="/"><i class="fas fa-home"></i>Home</a></li>
+                    <li><a href="/student"><i class="fas fa-file-alt"></i>Questions</a></li>
+                    <li><a href="/profile"><i class="fas fa-file-alt"></i>Profile</a></li>
+                    <li><a href="/logout"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="description-section">
+            <h2>{{ question.title }}</h2>
+            <p>{{ question.description }}</p>
+        </div>
+        <div class="code-section">
+            <form id="codeForm">
+                <textarea id="code">def {{question.function_name}}({{question.parameters}}):</textarea>
+                <br>
+                <button id="runCode">Run Code</button>
+                <button id="submitCode">Submit Code</button>
+            </form>
+            <div id="result" class="output"></div>
+            <div id="warningMessage" class="warning" style="display:none;"></div>
+        </div>
+    </div>
+    <script src="{{url_for('static', filename='editor.js')}}"></script>
+</body>
+</html>

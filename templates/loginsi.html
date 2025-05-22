@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Welcome!</h2>
+        <p>Please login or signup to access the application.</p>
+        <div class="button-group">
+            <a href="/login" class="btn">Login</a>
+            <a href="/signup" class="btn">Signup</a>
+        </div>
+    </div>
+</body>
+</html>
+

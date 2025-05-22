@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='teacher.css')}}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h2 class="logo">Teacher Dashboard</h2>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/Allquestions">Submission</a></li>
+                    <li><a href ="class_report">Class-Report</a></li>
+                    <li><a href="/logoutt">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Add Question</h1>
+        <form id="addQuestionForm">
+            <label for="title">Question Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="functionName">Function Name:</label>
+            <input type="text" id="functionName" name="functionName" required>
+            <label for="parameters">parameters:</label>
+            <input type="text" id="parameters" name="parameters" required>
+
+            <h3>Test Cases</h3>
+            <div id="testCases">
+                <div class="test-case">
+                    <label>Input:</label>
+                    <input type="text" class="test-input" required>
+                    <label>Expected Output:</label>
+                    <input type="text" class="test-output" required>
+                </div>
+            </div>
+
+            <button type="button" id="addTestCase">Add Test Case</button>
+            <button type="submit">Submit Question</button>
+        </form>
+    </div>
+
+    <script src="{{url_for('static', filename='teacher.js')}}"></script>
+</body>
+</html>
+

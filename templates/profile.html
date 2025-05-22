@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        .card-header {
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 10px 10px 0 0;
+            text-align: center;
+            padding: 20px;
+        }
+        .card-body {
+            padding: 30px;
+        }
+        .btn-back {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .progress {
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2>User Profile</h2>
+            </div>
+            <div class="card-body">
+                <h3 class="text-center">Welcome, {{ user.name }}!</h3>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <h5><strong>Branch:</strong> {{ user.branch }}</h5>
+                        <h5><strong>Total Question Solved:</strong> {{ so }}</h5>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="text-center mt-4">
+                    <h4>Code Submission Accuracy</h4>
+                    <div class="progress mt-3">
+                        <div class="progress-bar" role="progressbar" style="width: {{ accuracy }}%" aria-valuenow="{{ accuracy }}" aria-valuemin="0" aria-valuemax="100">{{ accuracy }}%</div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="{{ url_for('student') }}" class="btn btn-back btn-lg">Back to Student Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

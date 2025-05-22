@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal</title>
+    <!-- Google Font for improved typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static',filename='index.css')}}"> <!-- Link to external CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Portal</h1>
+        <div class="portal-buttons">
+            <a href="/teacher" class="btn">Teacher's Portal</a>
+            <a href="/student" class="btn">Student's Portal</a>
+            <a href="/editor" class="btn">Coding Practice</a>
+        </div>
+    </div>
+</body>
+</html>

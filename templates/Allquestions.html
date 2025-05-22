@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <!-- Google Font for improved typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='student.css') }}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h2 class="logo">Teacher Dashboard</h2>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/teacher">Addquestions</a></li>
+                    <li><a href ="class_report">Class-Report</a></li>
+                    <li><a href="/logoutt">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Available Questions</h1>
+        <div class="question-cards">
+            {% for question in questions %}
+            <div class="card">
+                <a href="/passedsub/{{ question.id }}" class="card-link">
+                    <div class="desp"><h3>{{ question.title }}</h3></div>
+                    <div class="des"><p class="description">{{ question.description[:100] }}...</p></div>
+                    <div class="view-btn">All Submissions</div>
+                </a>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+</body>
+</html>

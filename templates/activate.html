@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Activation Code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Activation Code</h2>
+        <p>Please enter the activation code sent to your email.</p>
+        <form action="/activate" method="POST">
+            <label for="code">Activation Code:</label>
+            <input type="text" id="code" name="code" required><br><br>
+            <input type="submit" value="Activate">
+        </form>
+    </div>
+
+</body>
+</html>
